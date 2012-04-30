@@ -1,0 +1,7 @@
+<p>Привет <%= @resource.email %>!</p>
+
+<p>Ваш аккаунт заблокирован по некоторым причинам.</p>
+
+<p>Нажмите ссылку внизу для разблокировки:</p>
+
+<p><%= link_to 'Разблокировать', unlock_url(@resource, :unlock_token => @resource.unlock_token) %></p>
