@@ -1,5 +1,4 @@
 <h3>Панель управления контрактами</h3>
-<%-	 if   %>
 <table border=1>
   <tbody>
   <!-- Results table headers -->
@@ -12,6 +11,11 @@
     <td>1</td>
     <td>12 марта 2012</td>
     <td bgcolor="#dc143c"></td>
+    <% if current_user != nil %>
+        <% if current_user.has_role? :admin %>
+            <td><%= button_to "Анулировать" %></td>
+        <% end %>
+    <% end %>
   </tr>
   </tbody>
 </table>
